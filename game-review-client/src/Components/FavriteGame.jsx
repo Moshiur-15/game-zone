@@ -2,7 +2,6 @@ import freeFire from "../assets/0001-13528825705_20201124_153005_0000.jpg";
 import pubg from "../assets/pubg.jpg";
 import coc from "../assets/coc.jpg";
 import minecraft from "../assets/images.jpg";
-import { FaArrowUpLong } from "react-icons/fa6";
 export default function PopularGames() {
   const games = [
     {
@@ -63,10 +62,6 @@ export default function PopularGames() {
                   {game.description}
                 </p>
               </div>
-              <button className="text-blue-500 font-semibold pt-1 self-start flex items-center gap-1 hover:underline">
-                Read More{" "}
-                <FaArrowUpLong className="text-sm transform rotate-45" />
-              </button>
             </div>
           ))}
         </div>

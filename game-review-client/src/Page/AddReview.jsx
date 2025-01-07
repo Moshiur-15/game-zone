@@ -37,6 +37,7 @@ const AddReview = () => {
     })
       .then((res) => res.json())
       .then(() => {
+        Form.reset()
         Swal.fire({
           title: "The Rating",
           text: "Rating added successfully",

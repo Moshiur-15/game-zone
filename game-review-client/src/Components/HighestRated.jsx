@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { FaArrowUpLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 export default function HighestRated() {
@@ -36,8 +37,7 @@ export default function HighestRated() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-10">
               {highestRated.map((item) => (
-                <Link
-                  to={`/reviewDetails/${item._id}`}
+                <div
                   key={item._id}
                   className="group"
                 >
@@ -51,40 +51,49 @@ export default function HighestRated() {
                     </div>
                     <div className="px-6 py-4">
                       <div className="flex justify-between items-center">
-                        <h2 className="text-xl font-semibold dark:text-gray-100">
+                        <h2 className="text-xl font-semibold dark:text-gray-100 group-hover:text-blue-500 transition-colors duration-300">
                           {item.gameTitle}
                         </h2>
-                        <p className="font-normal dark:text-gray-300 bg-blue-200 rounded-full px-4 text-black text-sm">
+                        <p className="font-normal dark:text-gray-300 bg-blue-200 dark:bg-blue-900 rounded-full px-4 text-black text-sm">
                           <span>{item.genre}</span>
                         </p>
                       </div>
-                      <p className="text-gray-600 dark:text-gray-300">
-                        {item.reviewDescription.slice(0, 70)}...
+
+                      {/* Description */}
+                      <p className="text-gray-600 dark:text-gray-400 group-hover:text-gray-800 dark:group-hover:text-gray-100 transition-colors duration-300">
+                        {item.reviewDescription.slice(0, 90)}...
                       </p>
 
+                      {/* Rating Section */}
                       <div className="flex items-center gap-3 my-2">
                         <div className="flex items-center">
                           <img
                             src="https://img.icons8.com/?size=100&id=8ggStxqyboK5&format=png&color=000000"
-                            alt="Dark Mode Icon"
-                            className="w-6"
+                            alt="Rating Icon"
+                            className="w-5 group-hover:scale-110 transition-transform duration-300"
                           />
                           <img
                             src="https://img.icons8.com/?size=100&id=8ggStxqyboK5&format=png&color=000000"
-                            alt="Dark Mode Icon"
-                            className="w-6"
+                            alt="Rating Icon"
+                            className="w-5 group-hover:scale-110 transition-transform duration-300"
                           />
                           <img
                             src="https://img.icons8.com/?size=100&id=8ggStxqyboK5&format=png&color=000000"
-                            alt="Dark Mode Icon"
-                            className="w-6"
+                            alt="Rating Icon"
+                            className="w-5 group-hover:scale-110 transition-transform duration-300"
                           />
                         </div>
-                        <p>({item.rating})</p>
+                        <p className="group-hover:text-blue-500 transition-colors duration-300">
+                          ({item.rating})
+                        </p>
                       </div>
+                      <Link to={`/reviewDetails/${item._id}`} className=" flex items-center w-full justify-center rounded-md bg-blue-500/90 hover:bg-blue-600 py-2 text-gray-200">
+                        Read More
+                        <FaArrowUpLong className="text-sm transform rotate-45" />
+                      </Link>
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </div>

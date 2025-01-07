@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { BiMenuAltLeft } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import UseNavLink from "./useNavlink";
+import logo from "../assets/logo.jpg";
 
 export default function NavBer() {
   const { user, logOut, handleToggle, dark } = useContext(AuthContext);
@@ -29,6 +30,7 @@ export default function NavBer() {
           <UseNavLink title="WistList" to="/WistList" />
         </>
       )}
+      <UseNavLink title="Contact" to="/contact" />
     </div>
   );
   return (
@@ -41,13 +43,13 @@ export default function NavBer() {
             <div
               tabIndex={0}
               role="button"
-              className="px-4 py-2 bg-blue-500 text-white rounded-full"
+              className="px-3 py-2 bg-blue-500 text-white rounded-md"
               onClick={toggleDropdown}
             >
               {isOpen ? (
-                <IoMdClose className="text-2xl " />
+                <IoMdClose className="md:text-2xl" />
               ) : (
-                <BiMenuAltLeft className="text-2xl" />
+                <BiMenuAltLeft className="md:text-2xl" />
               )}
             </div>
             {isOpen && (
@@ -56,18 +58,18 @@ export default function NavBer() {
                 className="w-40 md:w-56 dropdown-content menu px-4 py-10 dark:bg-gray-800 bg-blue-100 rounded-md shadow-2xl"
               >
                 {link}
-                <h2 className="text-center mt-3"><UseNavLink title="Contact" to="/contact" /></h2>
               </ul>
             )}
           </div>
-          <a className="btn btn-ghost text-[14px] md:text-2xl font-bold px-2 lg:px-0 text-black dark:text-white">
-            GameZone
-          </a>
+          <div className="flex gap-2 items-center">
+            <img className="hidden lg:block h-10 w-10 rounded-full" src={logo} alt="" />
+            <h2 className="btn btn-ghost text-lg md:text-2xl font-bold px-2 lg:px-0 text-black dark:text-white">GameZone</h2>
+          </div>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{link}</ul>
+          <ul className="menu menu-horizontal px-1 lg:mr-10 xl:mr-0">{link}</ul>
         </div>
-        <div className="navbar-end gap-1">
+        <div className="navbar-end">
           <div className="md:mr-4 flex items-center">
             <label className="swap swap-rotate">
               <input
@@ -80,15 +82,15 @@ export default function NavBer() {
               />
               {isDark ? (
                 <img
-                  src="https://img.icons8.com/?size=100&id=nNtT9r4dDsaU&format=png&color=000000"
-                  alt="Dark Mode Icon"
-                  className="w-10"
+                  src="https://img.icons8.com/?size=100&id=648&format=png&color=000000"
+                  alt="Light Mode Icon"
+                  className="w-8 xl:w-10 bg-white rounded-full"
                 />
               ) : (
                 <img
-                  src="https://img.icons8.com/?size=100&id=648&format=png&color=000000"
-                  alt="Light Mode Icon"
-                  className="w-10"
+                  src="https://img.icons8.com/?size=100&id=nNtT9r4dDsaU&format=png&color=000000"
+                  alt="Dark Mode Icon"
+                  className="w-8 xl:w-10"
                 />
               )}
             </label>
@@ -97,7 +99,7 @@ export default function NavBer() {
           <div>
             {user && (
               <div
-                className="flex justify-center items-center"
+                className="flex justify-center items-center ml-1"
                 data-tooltip-id="user-tooltip"
                 data-tooltip-content={`${user.displayName}`}
               >
@@ -115,19 +117,19 @@ export default function NavBer() {
             {user ? (
               <button
                 onClick={logOut}
-                className="px-6 py-2 bg-blue-500 text-white rounded-full"
+                className="w-max ml-1 px-2 md:px-3 xl:px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base"
               >
                 Log out
               </button>
             ) : (
               <div className="flex md:flex-row md:gap-3 gap-0 items-center text-sm">
                 <Link to="/register">
-                  <button className="px-6 py-2 bg-blue-500 text-white rounded-full">
+                  <button className="px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base">
                     Register
                   </button>
                 </Link>
                 <Link to="/login">
-                  <button className="px-6 py-2 bg-blue-500 text-white rounded-full">
+                  <button className="ml-1 px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base">
                     Login
                   </button>
                 </Link>

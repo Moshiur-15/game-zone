@@ -25,38 +25,54 @@ export default function Banner() {
       >
         {/* Slide 1 */}
         <SwiperSlide>
-          <img
-            src={banner}
-            alt="Free Fire"
-            className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
-          />
+          <div className="relative">
+            <img
+              src={banner}
+              alt="Free Fire"
+              className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
+            />
+            <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
+            {/* Black overlay */}
+          </div>
         </SwiperSlide>
 
         {/* Slide 2 */}
         <SwiperSlide>
-          <img
-            src={banner2}
-            alt="PUBG"
-            className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
-          />
+          <div className="relative">
+            <img
+              src={banner2}
+              alt="PUBG"
+              className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
+            />
+            <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
+            {/* Black overlay */}
+          </div>
         </SwiperSlide>
 
         {/* Slide 3 */}
         <SwiperSlide>
-          <img
-            src={banner3}
-            alt="COC"
-            className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
-          />
+          <div className="relative">
+            <img
+              src={banner3}
+              alt="COC"
+              className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
+            />
+            <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
+            {/* Black overlay */}
+          </div>
         </SwiperSlide>
 
         {/* Slide 4 */}
         <SwiperSlide>
-          <img
-            src={banner4}
-            alt="Images"
-            className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
-          />
+          <div className="relative">
+            <img
+              src={banner4}
+              alt="Images"
+              className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
+            />
+            <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
+            {/* Black overlay */}
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>

@@ -1,108 +1,99 @@
-export default function Footer() {
+import { Link } from "react-router-dom";
+import logo from "../assets/logo.jpg";
+import { FaFacebook, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+
+const Footer = () => {
   return (
-    <footer className='bg-gray-100 py-10 text-gray-800 dark:bg-gray-800 dark:text-gray-300'>
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-5">
-        <div className="flex flex-col items-center md:items-start">
-          <div className="flex items-center mb-4">
-            <svg
-              width="50"
-              height="50"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              fillRule="evenodd"
-              clipRule="evenodd"
-              className="fill-current text-indigo-500"
-            >
-              <path d="M22.672 15.226..."></path>
-            </svg>
-            <span className='text-2xl font-semibold text-gray-800 dark:text-white'>
-              GameZone
-            </span>
+    <footer className="bg-slate-300/80 text-black dark:text-white py-8 dark:bg-slate-800">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* About Section */}
+          <div>
+            <div className="flex gap-2 items-center">
+              <img className="h-14 w-14 rounded-full" src={logo} alt="" />
+              <h2 className="text-blue-400 text-xl font-bold">GameZone</h2>
+            </div>
+            <p className="mt-4 max-w-xs">
+              Welcome to{" "}
+              <span className="text-blue-400 font-semibold">GameZone</span>!
+              Your ultimate platform for exploring game reviews, ratings, and
+              exciting news.
+            </p>
           </div>
-          <p className='ml-3 font-semibold dark:text-gray-400'>
-            Explore, review, and share your favorite games. Providing a chill
-            experience for gamers since 2024.
-          </p>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="text-blue-400 text-lg font-semibold">Quick Links</h3>
+            <ul className="mt-4 space-y-2">
+              <li>
+                <Link to="/" className="hover:text-blue-300">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/latestNews" className="hover:text-blue-300">
+                  latest News
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="hover:text-blue-300">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Follow Us */}
+          <div className="mt-6">
+            <h3 className="text-blue-400 text-lg font-semibold">Follow Us</h3>
+            <div className="flex space-x-6 mt-6">
+              {/* Email */}
+              <a
+                href="mailto:masiurislam28@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-3xl text-red-500 hover:text-red-600 transition duration-300"
+              >
+                <FaEnvelope />
+              </a>
+
+              {/* WhatsApp */}
+              <a
+                href="https://wa.me/+8801327023639"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp className="text-green-500 text-3xl cursor-pointer hover:text-green-600 transition" />
+              </a>
+
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebook className="text-blue-600 text-3xl cursor-pointer hover:text-blue-700 transition" />
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/feed/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin className="text-blue-500 text-3xl cursor-pointer hover:text-blue-700 transition" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <div className="dark:text-gray-400">
-          <h6 className="text-lg font-semibold mb-3 text-gray-800">Services</h6>
-          <ul className="space-y-2">
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Game Reviews
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Recommendations
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Community Forums
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Advertisement
-              </a>
-            </li>
-          </ul>
+        {/* Footer Bottom */}
+        <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm">
+          &copy; 2025 GameZone. All rights reserved.
         </div>
-
-        <div className="dark:text-gray-400">
-          <h6 className="text-lg font-semibold mb-3 text-gray-800">Company</h6>
-          <ul className="space-y-2">
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Contact
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Careers
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Press
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="dark:text-gray-400">
-          <h6 className="text-lg font-semibold mb-3 text-gray-800">Legal</h6>
-          <ul className="space-y-2">
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Terms of Use
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a className="hover:text-indigo-500 transition duration-300" href="#">
-                Cookie Policy
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="text-center mt-8 border-t border-gray-300 pt-5">
-        <p className="text-gray-500 dark:text-gray-200 text-sm">
-          © 2024 Chill Gamer. All rights reserved.
-        </p>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
