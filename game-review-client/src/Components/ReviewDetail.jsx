@@ -1,7 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import {
+  FaRegCalendarAlt,
+  FaStar,
+  FaUserAlt,
+  FaEnvelope,
+} from "react-icons/fa";
+
 export default function ReviewDetail() {
   const { user } = useContext(AuthContext);
   const data = useLoaderData();
@@ -45,65 +52,78 @@ export default function ReviewDetail() {
         });
       });
   };
+  console.log(data);
   return (
-    <div>
-      <div className="bg-gray-200 py-10 px-3 rounded-md shadow-lg">
-        <h2 className="text-2xl lg:text-3xl font-bold text-center text-gray-800 mb-6">
-          Review Details
-        </h2>
-        <div>
-          <div key={_id} className="max-w-2xl mx-auto">
-            <div className="rounded-lg overflow-hidden bg-white shadow-md">
-              <div className="relative">
-                <img
-                  src={cover}
-                  alt="Game cover"
-                  className="w-full h-64 object-cover"
-                />
-              </div>
-              <div className="px-6 py-4">
-                <h2 className="text-xl font-semibold text-gray-800">
-                  {gameTitle}
-                </h2>
-                <p className="text-gray-600 text-sm mt-2">
-                   <span className="font-bold">Genre:</span>{genre}
-                </p>
-                <p className="text-gray-600 text-sm">
-                  
-                  <span className="font-bold">Published Year:</span>{publishingYear}
-                </p>
-                <p className="mt-2">
-                   <span className="font-bold">Rating:</span>({rating})
-                </p>
-                <p className="text-gray-600 text-sm mt-2">
-                  
-                  <span className="text-gray-700 font-bold">Review Details:</span>{reviewDescription}
-                </p>
-              </div>
-              <div className="px-6 border-t border-gray-200 mt-4">
-                <p className="text-sm text-gray-600 font-semibold">
-                  Reviewer:{" "}
-                  <span className="font-bold">{user?.displayName}</span>
-                </p>
-                <p className="text-sm text-gray-600">
-                  Email:{" "}
-                  <span className="text-green-600 hover:underline">
-                    {user?.email}
-                  </span>
-                </p>
-              </div>
-              <div className="px-5 mb-6 mt-2">
-                <button
-                  className="text-white bg-green-500 hover:bg-green-700 w-full py-2 px-4 rounded-lg  transition duration-300 ease-in-out"
-                  onClick={() => handleWishlist(dataWish)}
-                >
-                  Add To Wishlist
-                </button>
-              </div>
-            </div>
+    <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
+
+    <div className="bg-blue-200 dark:bg-slate-700 py-20 text-center">
+      <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 dark:text-white">
+        Review Details
+      </h2>
+      <p className="pb-8 md:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
+        Discover in-depth insights, reviews, and ratings for the latest and
+        most popular games. Everything you need to level up your gaming
+        experience!
+      </p>
+    </div>
+
+    <div className="px-5 pt-5 py-10 relative -top-20 mx-auto max-w-4xl">
+      <div className="mx-auto space-y-4 bg-white dark:bg-gray-800 rounded-lg md:flex shadow-lg gap-14">
+        <div className="px-5 py-5 relative">
+          <img
+            src={cover}
+            alt="Game cover"
+            className="rounded-lg min-w-[300px] h-full rounded-l-lg object-cover"
+          />
+          <p className="top-7 left-6 absolute font-normal bg-blue-200 text-black dark:text-gray-300 dark:bg-blue-900 rounded-full px-4 text-sm">
+            {genre}
+          </p>
+        </div>
+        <div className="py-8 px-4">
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
+            {gameTitle}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-300 text-xs md:text-base mt-2">
+            {reviewDescription}
+          </p>
+
+          {/* Additional Info */}
+          <div className="flex items-center space-x-4 mt-3">
+            <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center">
+              <FaRegCalendarAlt className="mr-2 text-gray-500" />
+              {publishingYear}
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center">
+              <FaStar className="mr-1 text-yellow-500" /> ({rating})
+            </p>
           </div>
+
+          {/* Reviewer Info */}
+          <div className="mt-4 border-t pt-2 text-xs md:text-base dark:border-gray-700">
+            <p className="text-gray-600 dark:text-gray-300 font-semibold flex items-center">
+              <FaUserAlt className="mr-2 text-gray-500" />
+              <span className="font-bold">
+                {user?.displayName || "Anonymous"}
+              </span>
+            </p>
+            <p className="text-sm text-gray-600 dark:text-gray-300 flex items-center">
+              <FaEnvelope className="mr-2 text-gray-500" />
+              <span className="text-blue-600 hover:underline">
+                {user?.email || "N/A"}
+              </span>
+            </p>
+          </div>
+
+          {/* Wishlist Button */}
+          <button
+            className="w-full bg-blue-500 dark:bg-blue-600 text-white font-bold py-2 px-4 mt-4 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition duration-300 text-xs md:text-base"
+            onClick={() => handleWishlist(dataWish)}
+          >
+            Add to Wishlist
+          </button>
         </div>
       </div>
     </div>
+  </div>
   );
 }
