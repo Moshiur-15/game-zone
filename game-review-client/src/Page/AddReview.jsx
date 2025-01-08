@@ -69,7 +69,7 @@ const AddReview = () => {
               name="coverUrl"
               placeholder="https://example.com/cover.jpg"
               required
-              className="input w-full focus:outline-none dark:bg-slate-800"
+              className="input w-full focus:outline-none dark:bg-slate-800 dark:text-slate-400"
             />
           </div>
 
@@ -86,7 +86,7 @@ const AddReview = () => {
                 name="gameTitle"
                 placeholder="Enter game title"
                 required
-                className="input  w-full focus:outline-none dark:bg-slate-800"
+                className="input w-full focus:outline-none dark:bg-slate-800 dark:text-slate-400"
               />
             </div>
 
@@ -182,7 +182,7 @@ const AddReview = () => {
               rows="5"
               placeholder="Write your review here"
               required
-              className="textarea w-full focus:outline-none dark:bg-slate-800"
+              className="textarea w-full focus:outline-none dark:bg-slate-800 dark:text-slate-400"
             ></textarea>
           </div>
 
