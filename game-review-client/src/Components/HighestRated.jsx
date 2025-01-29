@@ -36,7 +36,7 @@ export default function HighestRated() {
               Check them out below!
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 my-10">
-              {highestRated.map((item) => (
+              {highestRated.reverse().map((item) => (
                 <div
                   key={item._id}
                   className="group"
