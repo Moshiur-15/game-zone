@@ -12,7 +12,6 @@ export default function Banner() {
   const pagination = {
     clickable: true,
   };
-
   return (
     <div>
       <Swiper
