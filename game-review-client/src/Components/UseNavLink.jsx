@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const UseNavLink = ({ title, to }) => {
   return (
-    <div className="inline-block w-max text-start px-6 lg:px-0 rounded-md">
+    <div className="inline-block w-max text-start rounded-md">
       <NavLink
         className={({ isActive }) =>
           `md:text-base w-max ${

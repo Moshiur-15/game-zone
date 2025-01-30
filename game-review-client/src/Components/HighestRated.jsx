@@ -16,7 +16,7 @@ export default function HighestRated() {
   }, []);
   console.log(highestRated);
   return (
-    <section className="container mx-auto my-20">
+    <section className="container mx-auto mb-20">
       <div className="py-5 px-5 rounded-md dark:text-white">
         {loading ? (
           <div className="flex justify-center items-center py-32 md:py-56">
@@ -27,7 +27,7 @@ export default function HighestRated() {
           </div>
         ) : (
           <div>
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-2 dark:text-white">
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-2 dark:text-white mt-14">
               Highest Rated Games
             </h2>
             <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">

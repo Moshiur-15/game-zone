@@ -8,7 +8,9 @@ export default function MainLayout() {
       <div className="sticky z-10 top-0 bg-white dark:bg-slate-800 shadow-lg">
         <NavBer />
       </div>
-      <Outlet />
+      <div className="min-h-[calc(100vh-300px)]">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

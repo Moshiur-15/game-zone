@@ -137,7 +137,7 @@ export default function Register() {
             </div>
             <button
               type="submit"
-              className="mt-5 w-full flex items-center justify-center gap-2 px-4 py-3 text-white bg-green-600 hover:bg-green-700 rounded-lg font-semibold shadow transition duration-300"
+              className="mt-5 w-full flex items-center justify-center gap-2 px-4 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold shadow transition duration-300"
             >
               <CgLogIn className="text-lg" />
               <span>Register</span>
@@ -145,7 +145,7 @@ export default function Register() {
             <button
               type="button"
               onClick={handleGoogleProvider}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 text-green-600 border border-green-600 rounded-lg hover:bg-green-100 font-semibold shadow transition duration-300"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 text-blue-500 border border-blue-600 rounded-lg hover:bg-blue-100 font-semibold shadow transition duration-300"
             >
               <FaGoogle />
               <span>Continue with Google</span>
