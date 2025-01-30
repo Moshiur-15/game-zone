@@ -12,6 +12,7 @@ export default function Banner() {
   const pagination = {
     clickable: true,
   };
+
   return (
     <div>
       <Swiper
@@ -22,7 +23,6 @@ export default function Banner() {
         speed={1300}
         className="mySwiper"
       >
-        {/* Slide 1 */}
         <SwiperSlide>
           <div className="relative">
             <img
@@ -31,7 +31,6 @@ export default function Banner() {
               className="w-full h-[400px] lg:h-[500px] xl:h-[550px] object-cover"
             />
             <div className="absolute inset-0 bg-black opacity-30"></div>{" "}
-            {/* Black overlay */}
           </div>
         </SwiperSlide>
 
