@@ -1,12 +1,12 @@
 🎮 project name = {
    GameZone
 }
-GameZone is a comprehensive platform designed for gamers to explore, review, and engage with a vibrant gaming community. With features like secure authentication, game exploration, and community interaction, GameZone provides an immersive experience for every user.
+   GameZone is a comprehensive platform designed for gamers to explore, review, and engage with a vibrant gaming community. With features like secure authentication, game exploration, and community interaction, GameZone provides an immersive experience for every user.
 
 🚀 Live Demo
 GameZone Live : https://gamezone-me.netlify.app/
 
-![GameZone Live Demo](src/assets/Screenshot%202025-01-09%20154303.png)
+![GameZone Live Demo](/game-review-client/src/assets/Screenshot%202025-01-09%20154303.png)
 
 ✨ Features
 🔑 User Authentication – Secure user registration and login system for a personalized experience.
