@@ -4,7 +4,7 @@
 🚀 Live Demo
    GameZone Live : https://gamezone-me.netlify.app/
    ![GameZone Live Demo](src/assets/Screenshot%202025-01-09%20154303.png)
-
+No code was selected, and there is no existing code to improve.
 
 ✨ Features
    🔑 User Authentication – Secure user registration and login system for a personalized experience.
