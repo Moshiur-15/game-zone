@@ -1,6 +1,4 @@
-🎮 project name = {
-   GameZone
-}
+#  project name = { GameZone }
    GameZone is a comprehensive platform designed for gamers to explore, review, and engage with a vibrant gaming community. With features like secure authentication, game exploration, and community interaction, GameZone provides an immersive experience for every user.
 
 🚀 Live Demo
