@@ -8,7 +8,6 @@ const AddReview = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const Form = e.target;
-
     const cover = Form.coverUrl.value;
     const gameTitle = Form.gameTitle.value;
     const reviewDescription = Form.reviewDescription.value;
