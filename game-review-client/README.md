@@ -1,34 +1,42 @@
-🎮 GameZone
-    GameZone is a comprehensive platform designed for gamers to explore, review, and engage with a vibrant gaming community. With features like secure authentication, game exploration, and community interaction, GameZone provides an immersive experience for every user.
+🎮 project name = {
+   GameZone
+}
+   GameZone is a comprehensive platform designed for gamers to explore, review, and engage with a vibrant gaming community. With features like secure authentication, game exploration, and community interaction, GameZone provides an immersive experience for every user.
 
 🚀 Live Demo
-   GameZone Live : https://gamezone-me.netlify.app/
-   ![GameZone Live Demo](src/assets/Screenshot%202025-01-09%20154303.png)
-No code was selected, and there is no existing code to improve.
+GameZone Live : https://gamezone-me.netlify.app/
+
+![GameZone Live Demo](/game-review-client/src/assets/Screenshot%202025-01-09%20154303.png)
 
 ✨ Features
-   🔑 User Authentication – Secure user registration and login system for a personalized experience.
-   📝 Game Review Management – Users can write, edit, delete, and browse game reviews.
-   📱 Responsive UI Design – Clean, intuitive, and mobile-friendly design for a seamless experience.
-   🎮 Game Exploration – Search for games by categories, genres, or favorite titles.
-   💬 Interactive Community – Engage with others through comments, ratings, and likes on reviews.
-   🔍 Advanced Search & Filtering – Quickly find games using robust filtering options.
+🔑 User Authentication – Secure user registration and login system for a personalized experience.
+📝 Game Review Management – Users can write, edit, delete, and browse game reviews.
+📱 Responsive UI Design – Clean, intuitive, and mobile-friendly design for a seamless experience.
+🎮 Game Exploration – Search for games by categories, genres, or favorite titles.
+💬 Interactive Community – Engage with others through comments, ratings, and likes on reviews.
+🔍 Advanced Search & Filtering – Quickly find games using robust filtering options.
 
 🛠 Technologies Used
-   # Frontend
+
+# Frontend
+
       React
       TailwindCSS
       daisyUI
-   # Backend
+
+# Backend
+
       Node.js
       Express
-   # Database
+
+# Database
+
       MongoDB Atlas
 
 ⚡Project Challenges
-      Efficient State Management – Managing global states for reviews and user profiles.
-      Responsive Design – Ensuring cross-device compatibility for a seamless user experience.
-      Community Interactions – Implementing real-time updates for likes and comments.
+Efficient State Management – Managing global states for reviews and user profiles.
+Responsive Design – Ensuring cross-device compatibility for a seamless user experience.
+Community Interactions – Implementing real-time updates for likes and comments.
 
 ## dependencies": {
 
@@ -53,21 +61,24 @@ No code was selected, and there is no existing code to improve.
 ## How to Run GameZone Locally
 
 ## Clone the Repository:
-  https://github.com/Moshiur-15/GameZone
+
+https://github.com/Moshiur-15/GameZone
 
 ## Frontend Setup:
-  .env.local
-  npm install  
-  npm start
-  firebase
+
+.env.local
+npm install  
+ npm start
+firebase
 
 ## Backend Setup:
 
-  npm install  
-  env
-  MONGO_URI=<your_mongodb_uri>  
-  JWT_SECRET=<your_jwt_secret>  
-  PORT=5000 
+npm install  
+ env
+MONGO_URI=<your_mongodb_uri>  
+ JWT_SECRET=<your_jwt_secret>  
+ PORT=5000
 
-##  Start the server:
-  npm run dev  
+## Start the server:
+
+npm run dev

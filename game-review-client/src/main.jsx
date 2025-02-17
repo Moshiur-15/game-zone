@@ -17,7 +17,6 @@ import PrivateRoute from "./Components/PrivateRoute.jsx";
 import ReviewDetail from "./Components/ReviewDetail.jsx";
 import UpdateReview from "./Components/UpdateReview.jsx";
 import LatestNews from "./Components/LatestNews.jsx";
-import Contact from "./Page/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -47,8 +46,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/reviewDetails/:id",
-        element:<ReviewDetail/>,
-        loader:({params})=>fetch(`https://game-review-server-chi.vercel.app/allReview/${params.id}`)
+        element: <ReviewDetail />,
+        loader: ({ params }) =>
+          fetch(
+            `https://game-review-server-chi.vercel.app/allReview/${params.id}`
+          ),
       },
       {
         path: "/MyReview",
@@ -60,16 +62,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/UpdateReview/:id",
-        element: <PrivateRoute><UpdateReview/></PrivateRoute>,
-        loader:({params})=>fetch(`https://game-review-server-chi.vercel.app/allReview/${params.id}`)
+        element: (
+          <PrivateRoute>
+            <UpdateReview />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://game-review-server-chi.vercel.app/allReview/${params.id}`
+          ),
       },
       {
         path: "/WistList",
-        element: <PrivateRoute><WistList /></PrivateRoute>,
-      },
-      {
-        path: "/contact",
-        element: <Contact />
+        element: (
+          <PrivateRoute>
+            <WistList />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/Login",

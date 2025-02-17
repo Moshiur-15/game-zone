@@ -29,7 +29,6 @@ export default function NavBer() {
           <UseNavLink title="WistList" to="/WistList" />
         </>
       )}
-      <UseNavLink title="Contact" to="/contact" />
     </div>
   );
   return (
@@ -65,7 +64,8 @@ export default function NavBer() {
             <h2 className="btn btn-ghost text-lg md:text-2xl font-bold px-2 lg:px-0 text-black dark:text-white">GameZone</h2>
           </div>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        
+        <div className="hidden lg:flex">
           <ul className="menu menu-horizontal px-1 lg:mr-10 xl:mr-0">{link}</ul>
         </div>
         <div className="navbar-end">
@@ -119,11 +119,11 @@ export default function NavBer() {
               </button>
             ) : (
               <div className="flex md:flex-row md:gap-3 gap-0 items-center text-sm">
-                <Link to="/register">
+                {/* <Link to="/register">
                   <button className="px-3 md:px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base">
                     Register
                   </button>
-                </Link>
+                </Link> */}
                 <Link to="/login">
                   <button className="ml-1 px-3 md:px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base">
                     Login
