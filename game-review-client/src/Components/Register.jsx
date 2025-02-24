@@ -5,15 +5,13 @@ import { FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { CgLogIn } from "react-icons/cg";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import register from "../assets/register.png";
 import yourBackgroundImageUrl from "../assets/lbg.jpg";
 
 export default function Register() {
-  const { createUser, setUser, profile, googleProvider } =
-    useContext(AuthContext);
+  const { createUser, setUser, profile, googleProvider } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -34,23 +32,22 @@ export default function Register() {
         return toast.error(`${error.message}`);
       });
   };
+
   const handleRegister = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+
     if (!/[A-Z]/.test(password)) {
-      return toast.error(
-        "Password must contain at least one uppercase letter."
-      );
+      return toast.error("Password must contain at least one uppercase letter.");
     } else if (!/[a-z]/.test(password)) {
-      return toast.error(
-        "Password must contain at least one lowercase letter."
-      );
+      return toast.error("Password must contain at least one lowercase letter.");
     } else if (password.length < 6) {
       return toast.error("Password must be at least 6 characters long.");
     }
+
     createUser(email, password)
       .then((res) => {
         setUser(res.user);
@@ -66,66 +63,67 @@ export default function Register() {
         return toast.error(`${error.message}`);
       });
   };
+
   return (
     <div
-      className="flex items-center justify-center py-20 min-h-screen w-full bg-slate-100 bg-cover bg-center"
+      className="flex items-center justify-center py-20 min-h-screen w-full bg-slate-100 bg-cover bg-center dark:bg-gray-800"
       style={{ backgroundImage: `url(${yourBackgroundImageUrl})` }}
     >
-      <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg mx-0 md:mx-16 xl:mx-0">
+      <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg mx-0 md:mx-16 xl:mx-0 dark:bg-gray-900 dark:text-white">
         <section className="md:w-1/2 max-w-2xl">
-          <img className="w-full" src={register} alt="" />
+          <img className="w-full" src={register} alt="Register" />
         </section>
         <section className="md:w-1/2 md:border-l md:pl-5 max-w-3xl p-8">
-          <h2 className="text-lg md:text-2xl font-bold mb-4 text-gray-800 text-center ">
+          <h2 className="text-lg md:text-2xl font-bold mb-4 text-gray-800 text-center dark:text-white">
             Register Your Account
           </h2>
           <form onSubmit={handleRegister}>
             <div>
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text dark:text-gray-300">Name</span>
               </label>
               <input
                 name="name"
                 type="text"
                 placeholder="Enter your name"
                 required
-                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-600 dark:text-white dark:border-gray-500"
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">PhotoURL</span>
+                <span className="label-text dark:text-gray-300">PhotoURL</span>
               </label>
               <input
                 name="photo"
                 type="text"
                 placeholder="Enter your photo URL"
                 required
-                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-600 dark:text-white dark:border-gray-500"
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text dark:text-gray-300">Email</span>
               </label>
               <input
                 name="email"
                 type="email"
                 placeholder="Enter your email address"
                 required
-                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-600 dark:text-white dark:border-gray-500"
               />
             </div>
             <div className="relative">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text dark:text-gray-300">Password</span>
               </label>
               <input
                 name="password"
                 type={showPass ? "text" : "password"}
                 placeholder="Enter your password"
                 required
-                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
+                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 dark:bg-gray-600 dark:text-white dark:border-gray-500"
               />
               <button
                 type="button"
@@ -151,9 +149,9 @@ export default function Register() {
               <span>Continue with Google</span>
             </button>
           </form>
-          <p className="mt-6 text-center text-sm text-gray-600">
+          <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-300">
             have an account?{" "}
-            <Link to="/login" className="text-blue-600 hover:underline">
+            <Link to="/login" className="text-blue-600 hover:underline dark:text-blue-400">
               Login
             </Link>
           </p>

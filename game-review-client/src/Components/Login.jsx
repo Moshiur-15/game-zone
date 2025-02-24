@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import login from "../assets/logins.png";
 import yourBackgroundImageUrl from "../assets/lbg.jpg";
+
 export default function Login() {
   const { loginUser, setUser, googleProvider } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
@@ -46,17 +47,23 @@ export default function Login() {
   };
 
   return (
-    <section className="bg-slate-50" style={{ backgroundImage: `url(${yourBackgroundImageUrl})`, backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center' }}>
+    <section
+      className="bg-slate-50 dark:bg-gray-800"
+      style={{
+        backgroundImage: `url(${yourBackgroundImageUrl})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="flex items-center justify-center py-20 container mx-auto">
-        <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg">
+        <div className="flex flex-col md:flex-row bg-white dark:bg-gray-900 shadow-lg rounded-lg">
           <section className="md:w-1/2 max-w-2xl">
             <img className="w-full" src={login} alt="" />
           </section>
           {/* form section */}
-          <section className="md:w-1/2 md:border-l md:pl-5 max-w-3xl p-8 ">
-            <h2 className="text-2xl font-bold text-center text-gray-700 mb-6">
+          <section className="md:w-1/2 md:border-l md:pl-5 max-w-3xl p-8">
+            <h2 className="text-2xl font-bold text-center text-gray-700 dark:text-white mb-6">
               Welcome Back
             </h2>
             <form onSubmit={handleLogin} className="space-y-6">
@@ -64,7 +71,7 @@ export default function Login() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-600 mb-2"
+                  className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
                 >
                   Email Address
                 </label>
@@ -74,7 +81,7 @@ export default function Login() {
                   id="email"
                   placeholder="Enter your email"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-400 focus:border-blue-500"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
                 />
               </div>
 
@@ -82,7 +89,7 @@ export default function Login() {
               <div className="relative">
                 <label
                   htmlFor="password"
-                  className="block text-sm font-medium text-gray-600 mb-2"
+                  className="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-2"
                 >
                   Password
                 </label>
@@ -92,12 +99,12 @@ export default function Login() {
                   id="password"
                   placeholder="Enter your password"
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-400 focus:border-blue-500"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring focus:ring-blue-400 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPass(!showPass)}
-                  className="absolute right-3 top-[45px] text-gray-500 hover:text-gray-800"
+                  className="absolute right-3 top-[45px] text-gray-500 dark:text-gray-300 hover:text-gray-800"
                 >
                   {showPass ? <FaEyeSlash /> : <FaEye />}
                 </button>
@@ -111,11 +118,11 @@ export default function Login() {
                     type="checkbox"
                     className="text-blue-500 focus:ring focus:ring-blue-400 rounded"
                   />
-                  <span className="ml-2 text-sm text-gray-600">
+                  <span className="ml-2 text-sm text-gray-600 dark:text-gray-300">
                     Remember Me
                   </span>
                 </label>
-                <a href="#" className="text-sm text-blue-600 hover:underline">
+                <a href="#" className="text-sm text-blue-600 dark:text-blue-400 hover:underline">
                   Forgot Password?
                 </a>
               </div>
@@ -133,16 +140,16 @@ export default function Login() {
               <button
                 type="button"
                 onClick={handleGoogleProvider}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 text-blue-500 border border-blue-600 rounded-lg hover:bg-blue-100 font-semibold shadow transition duration-300"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 text-blue-500 border border-blue-600 rounded-lg hover:bg-blue-100 dark:text-blue-400 dark:border-blue-500 dark:hover:bg-blue-600 font-semibold shadow transition duration-300"
               >
                 <FaGoogle />
                 <span>Continue with Google</span>
               </button>
             </form>
             {/* Register Link */}
-            <p className="mt-6 text-center text-sm text-gray-600">
+            <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-300">
               Don’t have an account?{" "}
-              <Link to="/register" className="text-blue-600 hover:underline">
+              <Link to="/register" className="text-blue-600 dark:text-blue-400 hover:underline">
                 Register
               </Link>
             </p>

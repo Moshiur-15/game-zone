@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import { TiDeleteOutline } from "react-icons/ti";
@@ -39,6 +39,7 @@ export default function MyReviews() {
       </div>
     );
   }
+
   const handleDelate = (id) => {
     Swal.fire({
       title: "Are you sure?",
@@ -70,57 +71,72 @@ export default function MyReviews() {
   };
 
   return (
-    <div className="container mx-auto min-h-[calc(100vh-320px)] py-10">
-      <div className="overflow-x-auto">
-        <table className="table-auto w-full bg-white shadow-md rounded-lg">
-          <thead>
-            <tr className="bg-gray-200 text-gray-700 uppercase text-sm">
-              <th className="py-2 px-3">Id</th>
-              <th className="py-2 px-3">Game Title</th>
-              <th className="py-2 px-3">Genre</th>
-              <th className="py-2 px-3">Published Year</th>
-              <th className="py-2 px-3">Rating</th>
-              <th className="py-2 px-3">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {delateData.map((data, index) => (
-              <tr
-                key={data._id}
-                className={`${
-                  index % 2 === 0 ? "bg-gray-100" : "bg-white"
-                } hover:bg-gray-50 text-center`}
-              >
-                <td className="border px-4 py-2">{index + 1}</td>
-                <td className="border px-4 py-2">{data.gameTitle}</td>
-                <td className="border px-4 py-2">{data.genre}</td>
-                <td className="border px-4 py-2">{data.publishingYear}</td>
-                <td className="border px-4 py-2">{data.rating}</td>
+    <section className="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+      <div className="container mx-auto py-10">
+        {/* Title and Description */}
+        <div className="text-center mb-8">
+          <h2 className="uppercase text-3xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
+            🌟 My Reviews
+          </h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300 max-w-4xl mx-auto">
+            Here are your saved game reviews. You can update or delete them
+            anytime! Manage your reviews to keep your list up to date. Feel free
+            to edit your reviews or remove them if needed.
+          </p>
+        </div>
 
-                <td className="border px-4 py-2 flex justify-center gap-10  items-center text-center">
-                  <Link to={`/UpdateReview/${data._id}`}>
-                    <button
-                      className="w-4 h-4 rounded-full tooltip tooltip-top"
-                      data-tip="Update"
-                    >
-                      <MdOutlineSystemSecurityUpdate />
-                    </button>
-                  </Link>
-                  <Link>
+        {/* Table */}
+        <div className="overflow-x-auto">
+          <table className="table-auto w-full bg-white dark:bg-gray-800 shadow-md rounded-lg transition-colors duration-300">
+            <thead>
+              <tr className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white uppercase text-sm">
+                <th className="py-3 px-4">ID</th>
+                <th className="py-3 px-4">Game Title</th>
+                <th className="py-3 px-4">Genre</th>
+                <th className="py-3 px-4">Published Year</th>
+                <th className="py-3 px-4">Rating</th>
+                <th className="py-3 px-4">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {delateData.map((data, index) => (
+                <tr
+                  key={data._id}
+                  className={`${
+                    index % 2 === 0
+                      ? "bg-gray-200 dark:bg-gray-700"
+                      : "bg-gray-100 dark:bg-gray-800"
+                  } hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200 text-gray-900 dark:text-white text-center`}
+                >
+                  <td className="border px-4 py-3">{index + 1}</td>
+                  <td className="border px-4 py-3">{data.gameTitle}</td>
+                  <td className="border px-4 py-3">{data.genre}</td>
+                  <td className="border px-4 py-3">{data.publishingYear}</td>
+                  <td className="border px-4 py-3">{data.rating}</td>
+
+                  <td className="border px-4 py-3 flex justify-center gap-6 items-center text-center">
+                    <Link to={`/UpdateReview/${data._id}`}>
+                      <button
+                        className="w-6 h-6 rounded-full tooltip tooltip-top hover:text-blue-500 transition-colors duration-200"
+                        data-tip="Update"
+                      >
+                        <MdOutlineSystemSecurityUpdate size={20} />
+                      </button>
+                    </Link>
                     <button
                       onClick={() => handleDelate(data._id)}
-                      className="w-4 h-4 rounded-full text-xl tooltip tooltip-top"
-                      data-tip="Delate"
+                      className="w-6 h-6 rounded-full text-xl tooltip tooltip-top hover:text-red-500 transition-colors duration-200"
+                      data-tip="Delete"
                     >
-                      <TiDeleteOutline />
+                      <TiDeleteOutline size={20} />
                     </button>
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
