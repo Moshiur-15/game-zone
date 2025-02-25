@@ -51,7 +51,7 @@ export default function HighestRated() {
                     </div>
                     <div className="px-6 py-4">
                       <div className="flex justify-between items-center">
-                        <h2 className="text-xl font-semibold dark:text-gray-100 group-hover:text-blue-500 transition-colors duration-300">
+                        <h2 className="text-xl font-semibold dark:text-gray-100 transition-colors duration-300">
                           {item.gameTitle}
                         </h2>
                         <p className="font-normal dark:text-gray-300 bg-blue-200 dark:bg-blue-900 rounded-full px-4 text-black text-sm">

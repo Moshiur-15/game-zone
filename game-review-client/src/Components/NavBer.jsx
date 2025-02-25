@@ -1,12 +1,19 @@
 import { useContext, useEffect, useState } from "react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaSun, FaMoon, FaHome } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
-import { BiMenuAltLeft } from "react-icons/bi";
+import { BiSolidLogIn } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
 import UseNavLink from "./useNavlink";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo-2.png";
+import logo2 from "../assets/logo.png";
+import { PiEyesFill } from "react-icons/pi";
+import { TbNews } from "react-icons/tb";
+import { AiOutlineMenu } from "react-icons/ai";
+import { FaPlusCircle } from "react-icons/fa"; // Add Review Icon
+import { FaRegListAlt } from "react-icons/fa"; // My Review Icon
+import { FaHeart } from "react-icons/fa";
 
 export default function NavBer() {
   const { user, logOut, handleToggle, dark } = useContext(AuthContext);
@@ -20,14 +27,23 @@ export default function NavBer() {
 
   const link = (
     <div className="flex items-center flex-col lg:flex-row dark:text-white  gap-5">
-      <UseNavLink title="Home" to="/" />
-      <UseNavLink title="All Review" to="/AllReview" />
-      <UseNavLink title="Latest News" to="/latestNews" />
+      <UseNavLink title="Home" to="/" icon={<FaHome />} />
+      <UseNavLink title="All Review" to="/AllReview" icon={<PiEyesFill />} />
+      <UseNavLink title="Latest News" to="/latestNews" icon={<TbNews />} />
       {user && (
         <>
-          <UseNavLink title="Add Review" to="/AddReview" />
-          <UseNavLink title="My Review" to="/MyReview" />
-          <UseNavLink title="WistList" to="/WistList" />
+          <div className="flex items-center">
+            <FaPlusCircle className="text-blue-500" />
+            <UseNavLink title="Add Review" to="/AddReview" />
+          </div>
+          <div className="flex items-center">
+            <FaRegListAlt className="text-green-500" />
+            <UseNavLink title="My Review" to="/MyReview" />
+          </div>
+          <div className="flex items-center">
+            <FaHeart className="text-red-500" />
+            <UseNavLink title="WistList" to="/WistList" />
+          </div>
         </>
       )}
     </div>
@@ -37,39 +53,13 @@ export default function NavBer() {
       {/* Main Content */}
       <div className="navbar container mx-auto text-black dark:text-white ">
         <div className="navbar-start">
-          <div className="dropdown dropdown-open lg:hidden">
-            {/* Dropdown button */}
-            <div
-              tabIndex={0}
-              role="button"
-              className="px-3 py-2 bg-blue-500 text-white rounded-md"
-              onClick={toggleDropdown}
-            >
-              {isOpen ? (
-                <IoMdClose className="md:text-2xl" />
-              ) : (
-                <BiMenuAltLeft className="md:text-2xl" />
-              )}
-            </div>
-            {isOpen && (
-              <ul
-                tabIndex={0}
-                className="w-40 md:w-56 dropdown-content menu px-4 py-10 dark:bg-gray-800 bg-blue-100 rounded-md shadow-2xl"
-              >
-                {link}
-              </ul>
+          <>
+            {dark ? (
+              <img className="h-11 rounded-full" src={logo2} alt="" />
+            ) : (
+              <img className="h-10 rounded-full" src={logo} alt="" />
             )}
-          </div>
-          <div className="flex gap-2 items-center">
-            <img
-              className="hidden lg:block h-10 w-10 rounded-full"
-              src={logo}
-              alt=""
-            />
-            <h2 className="btn btn-ghost text-lg md:text-2xl font-bold px-2 lg:px-0 text-black dark:text-white">
-              GameZone
-            </h2>
-          </div>
+          </>
         </div>
 
         <div className="navbar-end">
@@ -82,8 +72,9 @@ export default function NavBer() {
             {user ? (
               <button
                 onClick={logOut}
-                className="w-max text-black dark:text-white text-xs md:text-base ml-2"
+                className="w-max text-black dark:text-white text-base ml-2 hover:scale-105 duration-700 font-semibold flex items-center"
               >
+                <BiSolidLogIn />
                 Log out
               </button>
             ) : (
@@ -92,7 +83,7 @@ export default function NavBer() {
           </div>
 
           {/* dark mode */}
-          <div className="flex items-center mr-3">
+          <div className={`flex items-center ${user ? "" : "mr-2"}`}>
             <label className="swap swap-rotate">
               <input
                 onChange={() => {
@@ -139,6 +130,32 @@ export default function NavBer() {
                   alt={user.displayName}
                 />
               </div>
+            )}
+          </div>
+
+          <div className="dropdown dropdown-bottom dropdown-end lg:hidden ml-2 relative">
+            {/* Dropdown button */}
+            <div
+              tabIndex={0}
+              role="button"
+              className="text-black dark:text-white rounded-md"
+              onClick={toggleDropdown}
+            >
+              {isOpen ? (
+                <IoMdClose className="text-3xl md:text-4xl" />
+              ) : (
+                <AiOutlineMenu className="text-3xl md:text-4xl" />
+              )}
+            </div>
+
+            {/* Modal */}
+            {isOpen && (
+              <ul
+                tabIndex={0}
+                className="w-40 md:w-56 dropdown-content menu px-4 py-10 dark:bg-gray-800 bg-blue-100 rounded-md shadow-2xl left-0 absolute top-full transform -translate-x-full"
+              >
+                {link}
+              </ul>
             )}
           </div>
         </div>

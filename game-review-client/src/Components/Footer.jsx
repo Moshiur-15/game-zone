@@ -1,17 +1,28 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import { FaFacebook, FaLinkedin, FaWhatsapp, FaEnvelope } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
+import logos from "../assets/logo-2.png";
+import logo2 from "../assets/logo.png";
 
 const Footer = () => {
+  const {dark} = useContext(AuthContext)
+  console.log(dark)
   return (
-    <footer className="bg-slate-300/80 text-black dark:text-white py-8 dark:bg-slate-800">
+    <footer className="bg-slate-200/80 text-black dark:text-white py-8 dark:bg-slate-800">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Section */}
           <div>
             <div className="flex gap-2 items-center">
-              <img className="h-14 w-14 rounded-full" src={logo} alt="" />
-              <h2 className="text-blue-400 text-xl font-bold">GameZone</h2>
+            <>
+            {dark ? (
+              <img className="h-11 rounded-full" src={logo2} alt="" />
+            ) : (
+              <img className="h-10 rounded-full" src={logos} alt="" />
+            )}
+          </>
             </div>
             <p className="mt-4 max-w-xs">
               Welcome to{" "}

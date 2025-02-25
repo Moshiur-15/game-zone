@@ -85,6 +85,7 @@ const AddReview = () => {
                 name="gameTitle"
                 placeholder="Enter game title"
                 required
+                maxLength={20}
                 className="input w-full focus:outline-none dark:bg-slate-800 dark:text-slate-400"
               />
             </div>
