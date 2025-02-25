@@ -7,14 +7,18 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import login from "../assets/logins.png";
 import yourBackgroundImageUrl from "../assets/lbg.jpg";
+import { ImSpinner2 } from "react-icons/im"; // Loading Icon
 
 export default function Login() {
   const { loginUser, setUser, googleProvider } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  const [loading, setLoading] = useState(false); // Loading state
+  const [loading2, setLoading2] = useState(false); // Loading state
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleGoogleProvider = () => {
+    setLoading2(true); // Start loading
     googleProvider()
       .then((result) => {
         setUser(result.user);
@@ -25,14 +29,16 @@ export default function Login() {
           icon: "success",
         });
       })
-      .catch((error) => toast.error(`${error.message}`));
+      .catch((error) => toast.error(`${error.message}`))
+      .finally(() => setLoading2(false)); // Stop loading
   };
 
   const handleLogin = (e) => {
     e.preventDefault();
+    setLoading(true); // Start loading
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+
     loginUser(email, password)
       .then((res) => {
         setUser(res.user);
@@ -43,7 +49,8 @@ export default function Login() {
           icon: "success",
         });
       })
-      .catch((error) => toast.error(`${error.message}`));
+      .catch((error) => toast.error(`${error.message}`))
+      .finally(() => setLoading(false)); // Stop loading
   };
 
   return (
@@ -130,20 +137,22 @@ export default function Login() {
               {/* Login Button */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold shadow transition duration-300"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold shadow transition duration-300 disabled:bg-blue-300"
+                disabled={loading}
               >
-                <CgLogIn className="text-lg" />
-                <span>Login</span>
+                {loading ? <ImSpinner2 className="animate-spin text-lg" /> : <CgLogIn className="text-lg" />}
+                <span>{loading ? "Logging in..." : "Login"}</span>
               </button>
 
               {/* Google Login */}
               <button
                 type="button"
                 onClick={handleGoogleProvider}
-                className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 text-blue-500 border border-blue-600 rounded-lg hover:bg-blue-100 dark:text-blue-400 dark:border-blue-500 dark:hover:bg-blue-600 font-semibold shadow transition duration-300"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 text-blue-500 border border-blue-600 rounded-lg hover:bg-blue-100 dark:text-blue-400 dark:border-blue-500 dark:hover:bg-blue-600 font-semibold shadow transition duration-300 disabled:bg-gray-300"
+                disabled={loading}
               >
-                <FaGoogle />
-                <span>Continue with Google</span>
+                {loading2 ? <ImSpinner2 className="animate-spin" /> : <FaGoogle />}
+                <span>{loading2 ? "Login in..." : "Continue with Google"}</span>
               </button>
             </form>
             {/* Register Link */}

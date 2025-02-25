@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import "react-tooltip/dist/react-tooltip.css";
@@ -60,16 +61,38 @@ export default function NavBer() {
             )}
           </div>
           <div className="flex gap-2 items-center">
-            <img className="hidden lg:block h-10 w-10 rounded-full" src={logo} alt="" />
-            <h2 className="btn btn-ghost text-lg md:text-2xl font-bold px-2 lg:px-0 text-black dark:text-white">GameZone</h2>
+            <img
+              className="hidden lg:block h-10 w-10 rounded-full"
+              src={logo}
+              alt=""
+            />
+            <h2 className="btn btn-ghost text-lg md:text-2xl font-bold px-2 lg:px-0 text-black dark:text-white">
+              GameZone
+            </h2>
           </div>
         </div>
-        
-        <div className="hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 lg:mr-10 xl:mr-0">{link}</ul>
-        </div>
+
         <div className="navbar-end">
-          <div className="md:mr-4 flex items-center">
+          <div className="hidden lg:flex">
+            <ul className="menu menu-horizontal px-3">{link}</ul>
+          </div>
+
+          {/* Login/Logout Buttons */}
+          <div className="mr-2">
+            {user ? (
+              <button
+                onClick={logOut}
+                className="w-max text-black dark:text-white text-xs md:text-base ml-2"
+              >
+                Log out
+              </button>
+            ) : (
+              ""
+            )}
+          </div>
+
+          {/* dark mode */}
+          <div className="flex items-center mr-3">
             <label className="swap swap-rotate">
               <input
                 onChange={() => {
@@ -80,55 +103,41 @@ export default function NavBer() {
                 checked={isDark}
               />
               {isDark ? (
-                <img
-                  src="https://img.icons8.com/?size=100&id=648&format=png&color=000000"
-                  alt="Light Mode Icon"
-                  className="w-8 bg-white rounded-full"
-                />
+                <FaSun className="text-yellow-400 w-6 h-6" />
               ) : (
-                <img
-                  src="https://img.icons8.com/?size=100&id=nNtT9r4dDsaU&format=png&color=000000"
-                  alt="Dark Mode Icon"
-                  className="w-8"
-                />
+                <FaMoon className="text-gray-800 w-6 h-6" />
               )}
             </label>
           </div>
-          {/* User Avatar */}
-          <div>
-            {user && (
-              <div
-                className="flex justify-center items-center ml-1"
-              >
-                <img
-                  className="max-w-[40px] border-2 border-blue-600 rounded-full"
-                  src={user.photoURL}
-                  alt={user.displayName}
-                />
-              </div>
-            )}
-          </div>
-          {/* Login/Logout Buttons */}
+
           <div>
             {user ? (
-              <button
-                onClick={logOut}
-                className="w-max ml-1 px-2 md:px-3 xl:px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base"
-              >
-                Log out
-              </button>
+              ""
             ) : (
               <div className="flex md:flex-row md:gap-3 gap-0 items-center text-sm">
-                {/* <Link to="/register">
+                <Link to="/register">
                   <button className="px-3 md:px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base">
                     Register
                   </button>
-                </Link> */}
+                </Link>
                 <Link to="/login">
                   <button className="ml-1 px-3 md:px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base">
                     Login
                   </button>
                 </Link>
+              </div>
+            )}
+          </div>
+
+          {/* User Avatar */}
+          <div>
+            {user && (
+              <div className="flex justify-center items-center ml-2">
+                <img
+                  className="max-w-[40px] max-h-[40px] border-2 border-blue-600 rounded-full"
+                  src={user.photoURL}
+                  alt={user.displayName}
+                />
               </div>
             )}
           </div>

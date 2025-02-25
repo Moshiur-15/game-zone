@@ -9,15 +9,20 @@ import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import register from "../assets/register.png";
 import yourBackgroundImageUrl from "../assets/lbg.jpg";
+import { ImSpinner2 } from "react-icons/im";
 
 export default function Register() {
-  const { createUser, setUser, profile, googleProvider } = useContext(AuthContext);
+  const { createUser, setUser, profile, googleProvider } =
+    useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
+  const [loading, setLoading] = useState(false); // Loading state
+  const [loading2, setLoading2] = useState(false); // Loading state
   const navigate = useNavigate();
   const location = useLocation();
 
   // handleGoogleProvider
   const handleGoogleProvider = () => {
+    setLoading2(true);
     googleProvider()
       .then((result) => {
         setUser(result.user);
@@ -30,10 +35,12 @@ export default function Register() {
       })
       .catch((error) => {
         return toast.error(`${error.message}`);
-      });
+      })
+      .finally(() => setLoading2(false));
   };
 
   const handleRegister = (e) => {
+    setLoading(true);
     e.preventDefault();
     const name = e.target.name.value;
     const photo = e.target.photo.value;
@@ -41,9 +48,13 @@ export default function Register() {
     const password = e.target.password.value;
 
     if (!/[A-Z]/.test(password)) {
-      return toast.error("Password must contain at least one uppercase letter.");
+      return toast.error(
+        "Password must contain at least one uppercase letter."
+      );
     } else if (!/[a-z]/.test(password)) {
-      return toast.error("Password must contain at least one lowercase letter.");
+      return toast.error(
+        "Password must contain at least one lowercase letter."
+      );
     } else if (password.length < 6) {
       return toast.error("Password must be at least 6 characters long.");
     }
@@ -61,7 +72,8 @@ export default function Register() {
       })
       .catch((error) => {
         return toast.error(`${error.message}`);
-      });
+      })
+      .finally(() => setLoading(false)); // Stop loading
   };
 
   return (
@@ -133,25 +145,39 @@ export default function Register() {
                 {showPass ? <FaEyeSlash /> : <FaEye />}
               </button>
             </div>
+            
             <button
               type="submit"
               className="mt-5 w-full flex items-center justify-center gap-2 px-4 py-3 text-white bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold shadow transition duration-300"
             >
-              <CgLogIn className="text-lg" />
-              <span>Register</span>
+              {loading ? (
+                <ImSpinner2 className="animate-spin text-lg" />
+              ) : (
+                <CgLogIn className="text-lg" />
+              )}
+              <span>{loading ? "Singing in..." : "Register"}</span>
             </button>
+
             <button
               type="button"
               onClick={handleGoogleProvider}
-              className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 text-blue-500 border border-blue-600 rounded-lg hover:bg-blue-100 font-semibold shadow transition duration-300"
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 mt-2 text-blue-500 border border-blue-600 rounded-lg hover:bg-blue-100 dark:text-blue-400 dark:border-blue-500 dark:hover:bg-blue-600 font-semibold shadow transition duration-300 disabled:bg-gray-300"
+              disabled={loading}
             >
-              <FaGoogle />
-              <span>Continue with Google</span>
+              {loading2 ? (
+                <ImSpinner2 className="animate-spin" />
+              ) : (
+                <FaGoogle />
+              )}
+              <span>{loading2 ? "Singing in..." : "Continue with Google"}</span>
             </button>
           </form>
           <p className="mt-6 text-center text-sm text-gray-600 dark:text-gray-300">
             have an account?{" "}
-            <Link to="/login" className="text-blue-600 hover:underline dark:text-blue-400">
+            <Link
+              to="/login"
+              className="text-blue-600 hover:underline dark:text-blue-400"
+            >
               Login
             </Link>
           </p>
