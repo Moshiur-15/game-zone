@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Title from "./sheard/title";
 
 export default function HighestRated() {
   const [highestRated, setHighestRated] = useState([]);
@@ -27,9 +28,7 @@ export default function HighestRated() {
           </div>
         ) : (
           <div>
-            <h2 className="text-3xl font-bold text-center text-gray-800 mb-2 dark:text-white mt-14">
-              Highest Rated Games
-            </h2>
+            <Title title="Highest Rated Games" />
             <p className="text-lg text-center text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
               Discover the top-rated games based on user reviews. These games
               have received the highest ratings and are favorites among gamers.

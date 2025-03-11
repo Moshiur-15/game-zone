@@ -9,6 +9,7 @@ export default {
     extend: {
       fontFamily: {
         exe2: ['Exo 2', 'sans-serif'], // Using Exo 2
+        playfair: ["'Playfair Display'", "serif"], 
       },
     },
   },

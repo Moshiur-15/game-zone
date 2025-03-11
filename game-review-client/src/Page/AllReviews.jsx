@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowUpLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import Title from "../Components/sheard/title";
 
 export default function AllReviews() {
   const [review, setReview] = useState([]);
@@ -49,9 +50,7 @@ export default function AllReviews() {
           <div className="rounded-md">
             {/* Welcome Section */}
             <div className="bg-blue-100 dark:bg-gray-800 py-10">
-              <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-white mb-2">
-                All Reviews
-              </h2>
+              <Title title="All Reviews" />
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center max-w-lg mx-auto">
                 Discover what people are saying about the most popular games.
                 Read honest reviews and share your thoughts too!

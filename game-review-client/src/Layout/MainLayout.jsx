@@ -4,7 +4,7 @@ import Footer from "../Components/Footer";
 
 export default function MainLayout() {
   return (
-    <div className="font-exe2">
+    <div className="font-playfair">
       <div className="sticky z-10 top-0 bg-white dark:bg-slate-800 shadow-lg">
         <NavBer />
       </div>

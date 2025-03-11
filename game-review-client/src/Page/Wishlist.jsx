@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Title from "../Components/sheard/title";
 
 export default function Wishlist() {
   const { user } = useContext(AuthContext);
@@ -40,9 +41,7 @@ export default function Wishlist() {
       <div className="container mx-auto min-h-[calc(100vh-320px)] bg-white dark:bg-gray-900  transition-all duration-300 px-4 xl:px-0">
         {/* Page Title & Description */}
         <div className="text-center mb-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white uppercase">
-          ❤️ Your Wishlist
-          </h1>
+          <Title title="❤️Your Wishlist" />
           <p className="text-gray-600 dark:text-gray-300 mt-2 max-w-3xl mx-auto text-lg">
             Here are your saved games, carefully selected for you.Easily
             explore, review, and manage your wishlist.Keep track of your

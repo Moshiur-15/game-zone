@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import Title from "../Components/sheard/title";
 
 
 const AddReview = () => {
@@ -48,9 +49,7 @@ const AddReview = () => {
   return (
     <section className="dark:bg-slate-900 md:py-16">
       <div className="max-w-3xl mx-auto bg-gray-200/80 dark:bg-slate-700 rounded-lg shadow-xl py-8 px-10">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-2 dark:text-white">
-          Add New Review
-        </h2>
+        <Title title="Add New Review" />
         <p className="text-center text-gray-600 dark:text-gray-400 mb-4 max-w-lg mx-auto">
           Share your thoughts on the game you're playing! Rate it and tell
           others what you loved or didn’t enjoy about it.

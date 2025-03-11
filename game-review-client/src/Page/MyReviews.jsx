@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import { TiDeleteOutline } from "react-icons/ti";
 import { MdOutlineSystemSecurityUpdate } from "react-icons/md";
+import Title from "../Components/sheard/title";
 
 export default function MyReviews() {
   const { user } = useContext(AuthContext);
@@ -75,9 +76,7 @@ export default function MyReviews() {
       <div className="container mx-auto py-10">
         {/* Title and Description */}
         <div className="text-center mb-8">
-          <h2 className="uppercase text-3xl font-bold text-gray-900 dark:text-white transition-colors duration-300">
-            🌟 My Reviews
-          </h2>
+          <Title title="🌟 My Reviews" />
           <p className="text-lg text-gray-700 dark:text-gray-300 mt-2 transition-colors duration-300 max-w-4xl mx-auto">
             Here are your saved game reviews. You can update or delete them
             anytime! Manage your reviews to keep your list up to date. Feel free

@@ -3,14 +3,16 @@ import NR2 from "../assets/NR2.webp";
 import NR3 from "../assets/NR3.webp";
 import NR4 from "../assets/NR4.webp";
 import NR5 from "../assets/NR5.webp";
+import Title from "./sheard/title";
 
 export default function NewRelease() {
   return (
     <div className="container mx-auto py-20">
       {/* Title */}
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-1 dark:text-white">
-        New Releases
+       
       </h2>
+      <Title title="New Releases" />
 
       {/* Description */}
       <p className="text-center text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">

@@ -8,6 +8,7 @@ import n6 from "../assets/n6.jpg";
 import n7 from "../assets/n7.jpg";
 import n8 from "../assets/n8.jpg";
 import n9 from "../assets/n9.jpg";
+import Title from "./sheard/title";
 
 export default function LatestHome() {
   const data = [
@@ -70,7 +71,7 @@ export default function LatestHome() {
   return (
     <section>
       <div className="px-4 py-8">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-1 dark:text-white">Latest News</h2>
+        <Title title="Latest News" />
         <p className="max-w-lg  mb-8 text-center text-lg text-gray-500 mx-auto">
           Stay updated with the latest happenings in the gaming world, from new
           releases to exciting updates and events.

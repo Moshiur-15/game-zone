@@ -2,6 +2,7 @@ import freeFire from "../assets/0001-13528825705_20201124_153005_0000.jpg";
 import pubg from "../assets/pubg.jpg";
 import coc from "../assets/coc.jpg";
 import minecraft from "../assets/images.jpg";
+import Title from "./sheard/title";
 export default function PopularGames() {
   const games = [
     {
@@ -37,9 +38,7 @@ export default function PopularGames() {
   return (
     <div className="pb-8 bg-gray-100 dark:bg-gray-900 my-20">
       <div className="container mx-auto py-12 px-3 md:px-10 text-gray-900 rounded-lg p-4 dark:bg-gray-900 dark:text-white">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-1 dark:text-white">
-          Currently Popular Games
-        </h2>
+        <Title title="Currently Popular Games" />
         <p className="text-center mb-8 dark:text-gray-400 text-gray-600">
           Check out some of the hottest games that players are loving right now!
         </p>

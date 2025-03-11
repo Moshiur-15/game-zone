@@ -10,11 +10,11 @@ export default function Home() {
       <div>
         <Banner />
       </div>
-      <div className="bg-gray-50 dark:bg-gray-900">
-        <HighestRated />
-      </div>
-      <div className="container mx-auto space-y-10">
+      <div className="container mx-auto">
         <Category />
+      </div>
+      <div className=" space-y-10">
+        <HighestRated />
       </div>
       <FavriteGame />
       <div className="container mx-auto">
