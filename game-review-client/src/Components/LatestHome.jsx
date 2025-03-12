@@ -70,7 +70,7 @@ export default function LatestHome() {
 
   return (
     <section>
-      <div className="px-4 py-8">
+      <div className="">
         <Title title="Latest News" />
         <p className="max-w-lg  mb-8 text-center text-lg text-gray-500 mx-auto">
           Stay updated with the latest happenings in the gaming world, from new
@@ -78,8 +78,8 @@ export default function LatestHome() {
         </p>
         <div className="group grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {data.slice(0, 6).map((item) => (
-            <div key={item.id} className="bg-gray-800 rounded-lg shadow-xl">
-              <div className="overflow-hidden rounded-t-lg">
+            <div key={item.id} className="bg-gray-800">
+              <div className="overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}

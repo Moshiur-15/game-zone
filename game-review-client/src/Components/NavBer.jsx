@@ -105,15 +105,10 @@ export default function NavBer() {
             {user ? (
               ""
             ) : (
-              <div className="flex md:flex-row md:gap-3 gap-0 items-center text-sm">
-                <Link to="/register">
-                  <button className="px-3 md:px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base">
-                    Register
-                  </button>
-                </Link>
+              <div>
                 <Link to="/login">
-                  <button className="ml-1 px-3 md:px-6 py-2 bg-blue-500 text-white rounded-md text-xs md:text-base">
-                    Login
+                  <button className="px-3 w-max sm:px-6 py-2 hover:border hover:border-blue-300 bg-blue-500 text-white text-xs md:text-base font-bold transition-all duration-500 hover:bg-white hover:text-black">
+                    Join Now
                   </button>
                 </Link>
               </div>

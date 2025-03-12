@@ -12,7 +12,7 @@ const images = [c1, c2, c3, c4, c5, c6, c7, c8,];
 
 export default function Category() {
   return (
-    <div className='px-4 xl:px-0 mt-10'>
+    <div className=''>
       <div className='mb-6'>
         <Title title="Categories" />
         <p className='mb-8 text-center text-lg text-gray-500 max-w-sm mx-auto'>
@@ -26,7 +26,7 @@ export default function Category() {
             key={index}
             src={image}
             alt={`Category ${index + 1}`}
-            className='rounded-md w-full h-32 md:h-40'
+            className='w-full h-32 md:h-40'
           />
         ))}
       </div>

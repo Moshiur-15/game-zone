@@ -7,7 +7,7 @@ import Title from "./sheard/title";
 
 export default function NewRelease() {
   return (
-    <div className="container mx-auto py-20">
+    <div className="">
       {/* Title */}
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-1 dark:text-white">
        

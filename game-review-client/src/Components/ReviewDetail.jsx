@@ -8,6 +8,7 @@ import {
   FaUserAlt,
   FaEnvelope,
 } from "react-icons/fa";
+import Title from "./sheard/title";
 
 export default function ReviewDetail() {
   const { user } = useContext(AuthContext);
@@ -21,6 +22,8 @@ export default function ReviewDetail() {
     rating,
     reviewDescription,
     cover,
+    userName,
+    userEmail,
   } = data;
   const dataWish = { genre, gameTitle, publishingYear, rating };
 
@@ -54,76 +57,72 @@ export default function ReviewDetail() {
   };
   console.log(data);
   return (
-    <div className="bg-gray-100 dark:bg-gray-900 min-h-screen">
+    <div className="dark:bg-gray-700/90">
+      <div className="py-10 lg:py-20 text-center ">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 dark:text-white"></h2>
+        <Title title="Review Details" />
+        <p className="pb-8 md:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
+          Discover in-depth insights, reviews, and ratings for the latest and
+          most popular games. Everything you need to level up your gaming
+          experience!
+        </p>
+      </div>
 
-    <div className="bg-blue-200 dark:bg-slate-700 py-20 text-center">
-      <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 dark:text-white">
-        Review Details
-      </h2>
-      <p className="pb-8 md:text-lg text-gray-600 dark:text-gray-300 max-w-xl mx-auto">
-        Discover in-depth insights, reviews, and ratings for the latest and
-        most popular games. Everything you need to level up your gaming
-        experience!
-      </p>
-    </div>
-
-    <div className="px-5 pt-5 py-10 relative -top-20 mx-auto max-w-4xl">
-      <div className="mx-auto space-y-4 bg-white dark:bg-gray-800 rounded-lg md:flex shadow-lg gap-14">
-        <div className="px-5 py-5 relative">
-          <img
-            src={cover}
-            alt="Game cover"
-            className="rounded-lg min-w-[300px] h-full rounded-l-lg object-cover"
-          />
-          <p className="top-7 left-6 absolute font-normal bg-blue-200 text-black dark:text-gray-300 dark:bg-blue-900 rounded-full px-4 text-sm">
-            {genre}
-          </p>
-        </div>
-        <div className="py-8 px-4">
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
-            {gameTitle}
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300 text-xs md:text-base mt-2">
-            {reviewDescription}
-          </p>
-
-          {/* Additional Info */}
-          <div className="flex items-center space-x-4 mt-3">
-            <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center">
-              <FaRegCalendarAlt className="mr-2 text-gray-500" />
-              {publishingYear}
-            </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center">
-              <FaStar className="mr-1 text-yellow-500" /> ({rating})
+      <div className="px-5 pt-5 py-10 relative -top-20 mx-auto max-w-4xl">
+        <div className="mx-auto space-y-4 dark:bg-gray-800 md:flex gap-14 bg-blue-50">
+          <div className="px-5 pt-5 sm:py-5 relative ">
+            <img
+              src={cover}
+              alt="Game cover"
+              className="rounded-lg sm:min-w-[300px] h-full w-full rounded-l-lg object-cover border dark:border-none border-blue-100"
+            />
+            <p className="top-7 left-6 absolute font-normal bg-blue-200 text-black dark:text-gray-300 dark:bg-blue-900 rounded-full px-4 text-sm">
+              {genre}
             </p>
           </div>
+          <div className="sm:py-8 px-4">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-white">
+              {gameTitle}
+            </h3>
+            <p className="text-gray-600 dark:text-gray-300 text-xs md:text-base mt-2">
+              {reviewDescription}
+            </p>
 
-          {/* Reviewer Info */}
-          <div className="mt-4 border-t pt-2 text-xs md:text-base dark:border-gray-700">
-            <p className="text-gray-600 dark:text-gray-300 font-semibold flex items-center">
-              <FaUserAlt className="mr-2 text-gray-500" />
-              <span className="font-bold">
-                {user?.displayName || "Anonymous"}
-              </span>
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300 flex items-center">
-              <FaEnvelope className="mr-2 text-gray-500" />
-              <span className="text-blue-600 hover:underline">
-                {user?.email || "N/A"}
-              </span>
-            </p>
+            {/* Additional Info */}
+            <div className="flex items-center space-x-4 mt-3">
+              <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center">
+                <FaRegCalendarAlt className="mr-2 text-gray-500" />
+                {publishingYear}
+              </p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center">
+                <FaStar className="mr-1 text-yellow-500" /> ({rating})
+              </p>
+            </div>
+
+            {/* Reviewer Info */}
+            <div className="mt-4 border-t pt-2 text-xs md:text-base dark:border-gray-700">
+              <p className="text-gray-600 dark:text-gray-300 font-semibold flex items-center">
+                <FaUserAlt className="mr-2 text-gray-500" />
+                <span className="font-bold">{userName || "Anonymous"}</span>
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-300 flex items-center">
+                <FaEnvelope className="mr-2 text-gray-500" />
+                <span className="text-blue-600 hover:underline">
+                  {userEmail || "N/A"}
+                </span>
+              </p>
+            </div>
+
+            {/* Wishlist Button */}
+            <button
+              className="w-full hover:border hover:border-blue-300 bg-blue-500 text-white text-xs md:text-base font-bold transition-all duration-500 hover:bg-white hover:text-black py-2.5 my-4"
+              onClick={() => handleWishlist(dataWish)}
+            >
+              Add to Wishlist
+            </button>
           </div>
-
-          {/* Wishlist Button */}
-          <button
-            className="w-full bg-blue-500 dark:bg-blue-600 text-white font-bold py-2 px-4 mt-4 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500 transition duration-300 text-xs md:text-base"
-            onClick={() => handleWishlist(dataWish)}
-          >
-            Add to Wishlist
-          </button>
         </div>
       </div>
     </div>
-  </div>
   );
 }
