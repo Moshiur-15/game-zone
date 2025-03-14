@@ -115,7 +115,7 @@ export default function ReviewDetail() {
 
             {/* Wishlist Button */}
             <button
-              className="w-full hover:border hover:border-blue-300 bg-blue-500 text-white text-xs md:text-base font-bold transition-all duration-500 hover:bg-white hover:text-black py-2.5 my-4"
+              className="w-full bg-blue-500 text-white text-xs md:text-base font-bold transition-all duration-500 hover:bg-white hover:text-black py-2.5 my-4"
               onClick={() => handleWishlist(dataWish)}
             >
               Add to Wishlist

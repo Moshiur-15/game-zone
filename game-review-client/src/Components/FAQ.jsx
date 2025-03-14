@@ -42,7 +42,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="">
+    <div className="px-4 md:px-6 xl:px-0">
       <Title title="Frequently Asked Questions" />
       <div className="mt-10">
         {faqData.map((item, index) => (

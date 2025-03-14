@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { FaArrowUpLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
 import Title from "./sheard/title";
 import Card from "./sheard/Card";
 
@@ -19,7 +17,7 @@ export default function HighestRated() {
   }, []);
 
   return (
-    <div className="dark:text-white px-4 md:px-8">
+    <div className="dark:text-white px-4 md:px-6 xl:px-0">
       {loading ? (
         <div className="flex justify-center items-center py-32 md:py-56">
           <span className="loading loading-bars loading-xs"></span>

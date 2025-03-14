@@ -7,7 +7,7 @@ import Title from "./sheard/title";
 
 export default function NewRelease() {
   return (
-    <div className="">
+    <div className="px-4 md:px-6 xl:px-0">
       {/* Title */}
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-1 dark:text-white">
        

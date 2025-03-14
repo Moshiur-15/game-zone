@@ -59,7 +59,7 @@ export default function AllReviews() {
             <div className="pb-5 md:flex justify-center gap-5 mt-8 px-3 md:px-0">
               {/* Sort Options */}
               <select
-                className="py-2 px-4 rounded bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600 w-full md:w-72 lg:w-96 mb-3 md:mb-0"
+                className="py-2 px-4 bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600 w-full md:w-72 lg:w-96 mb-3 md:mb-0"
                 onChange={(e) => setSortOption(e.target.value)}
                 value={sortOption}
               >
@@ -70,7 +70,7 @@ export default function AllReviews() {
 
               {/* Filter by Genre */}
               <select
-                className="py-2 px-4 rounded bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600 w-full md:w-72 lg:w-96"
+                className="py-2 px-4 bg-gray-100 dark:bg-gray-700 dark:text-white dark:border-gray-600 w-full md:w-72 lg:w-96"
                 onChange={(e) => setSortGenre(e.target.value)}
                 value={sortGenre}
               >

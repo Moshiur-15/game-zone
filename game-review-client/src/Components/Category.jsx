@@ -12,7 +12,7 @@ const images = [c1, c2, c3, c4, c5, c6, c7, c8,];
 
 export default function Category() {
   return (
-    <div className=''>
+    <div className='px-4 md:px-6 xl:px-0'>
       <div className='mb-6'>
         <Title title="Categories" />
         <p className='mb-8 text-center text-lg text-gray-500 max-w-sm mx-auto'>

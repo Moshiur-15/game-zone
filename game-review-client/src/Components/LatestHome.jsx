@@ -70,7 +70,7 @@ export default function LatestHome() {
 
   return (
     <section>
-      <div className="">
+      <div className="px-4 md:px-6 xl:px-0">
         <Title title="Latest News" />
         <p className="max-w-lg  mb-8 text-center text-lg text-gray-500 mx-auto">
           Stay updated with the latest happenings in the gaming world, from new

@@ -55,9 +55,9 @@ export default function NavBer() {
         <div className="navbar-start">
           <>
             {dark ? (
-              <img className="h-11 rounded-full" src={logo2} alt="" />
+              <img className="h-[36px] md:h-[40px] rounded-full" src={logo2} alt="" />
             ) : (
-              <img className="h-10 rounded-full" src={logo} alt="" />
+              <img className="h-[30px] mdh-[34px] rounded-full" src={logo} alt="" />
             )}
           </>
         </div>
@@ -107,7 +107,7 @@ export default function NavBer() {
             ) : (
               <div>
                 <Link to="/login">
-                  <button className="px-3 w-max sm:px-6 py-2 hover:border hover:border-blue-300 bg-blue-500 text-white text-xs md:text-base font-bold transition-all duration-500 hover:bg-white hover:text-black">
+                  <button className="px-3 w-max sm:px-6 py-2 bg-blue-500 text-white text-xs md:text-base font-bold transition-all duration-500 hover:bg-white hover:text-black">
                     Join Now
                   </button>
                 </Link>
@@ -137,9 +137,9 @@ export default function NavBer() {
               onClick={toggleDropdown}
             >
               {isOpen ? (
-                <IoMdClose className="text-3xl md:text-4xl" />
+                <IoMdClose className="text-3xl md:text-3xl" />
               ) : (
-                <AiOutlineMenu className="text-3xl md:text-4xl" />
+                <AiOutlineMenu className="text-3xl md:text-3xl" />
               )}
             </div>
 
