@@ -47,7 +47,7 @@ const AddReview = () => {
   };
 
   return (
-    <section className="dark:bg-slate-900 md:py-16">
+    <section className="dark:bg-slate-900 md:py-16 min-h-[calc(100vh-300px)]">
       <div className="max-w-3xl mx-auto bg-gray-200/80 dark:bg-slate-700 rounded-lg shadow-xl py-8 px-10">
         <Title title="Add New Review" />
         <p className="text-center text-gray-600 dark:text-gray-400 mb-4 max-w-lg mx-auto">

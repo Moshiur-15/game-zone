@@ -63,7 +63,7 @@ export default function Review() {
   };
 
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+    <section className="bg-gray-100 dark:bg-gray-900 min-h-[calc(100vh-300px)] transition-colors duration-300">
       <div className="container mx-auto py-10">
         {/* Title and Description */}
         <div className="text-center mb-8">
@@ -78,7 +78,7 @@ export default function Review() {
         <div className="overflow-x-auto">
           <table className="table-auto w-full bg-white dark:bg-gray-800 shadow-md rounded-lg transition-colors duration-300">
             <thead>
-              <tr className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white uppercase text-sm">
+              <tr className="bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white uppercase text-sm">
                 <th className="py-3 px-4">ID</th>
                 <th className="py-3 px-4">Game Title</th>
                 <th className="py-3 px-4">Genre</th>
@@ -95,13 +95,13 @@ export default function Review() {
                     index % 2 === 0 ? "bg-gray-200 dark:bg-gray-700" : "bg-gray-100 dark:bg-gray-800"
                   } hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200 text-gray-900 dark:text-white text-center`}
                 >
-                  <td className="border dark:border-gray-700 px-4 py-3">{index + 1}</td>
-                  <td className="border dark:border-gray-700 px-4 py-3">{data.gameTitle}</td>
-                  <td className="border dark:border-gray-700 px-4 py-3">{data.genre}</td>
-                  <td className="border dark:border-gray-700 px-4 py-3">{data.publishingYear}</td>
-                  <td className="border dark:border-gray-700 px-4 py-3">{data.rating}</td>
+                  <td className=" px-4 py-3">{index + 1}</td>
+                  <td className=" px-4 py-3">{data.gameTitle}</td>
+                  <td className=" px-4 py-3">{data.genre}</td>
+                  <td className=" px-4 py-3">{data.publishingYear}</td>
+                  <td className=" px-4 py-3">{data.rating}</td>
 
-                  <td className="border dark:border-gray-700 px-4 py-3 flex justify-center gap-6 items-center text-center">
+                  <td className=" px-4 py-3 flex justify-center gap-6 items-center text-center">
                     <Link to={`/UpdateReview/${data._id}`}>
                       <button
                         className="w-6 h-6 rounded-full tooltip tooltip-top hover:text-blue-500 focus:outline-none transition-colors duration-200"

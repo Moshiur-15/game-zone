@@ -88,7 +88,7 @@ export default function LatestNews() {
           </div>
         </div>
   
-        <section className="dark:bg-gray-700">
+        <section className="dark:bg-gray-700 min-h-[calc(100vh-300px)]">
           <div className="container mx-auto px-4 py-8 ">
             <h1 className="text-4xl font-bold text-center text-black dark:text-white mb-4">
               Our Latest News

@@ -78,7 +78,7 @@ export default function Register() {
 
   return (
     <div
-      className="flex items-center justify-center py-20 min-h-screen w-full bg-slate-100 bg-cover bg-center dark:bg-gray-800"
+      className="flex items-center justify-center py-20 min-h-[calc(100vh-300px)] w-full bg-slate-100 bg-cover bg-center dark:bg-gray-800"
       style={{ backgroundImage: `url(${yourBackgroundImageUrl})` }}
     >
       <div className="flex flex-col md:flex-row bg-white shadow-lg rounded-lg mx-0 md:mx-16 xl:mx-0 dark:bg-gray-900 dark:text-white">

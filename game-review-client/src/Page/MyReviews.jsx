@@ -72,7 +72,7 @@
 //   };
 
 //   return (
-//     <section className="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+//     <section className="bg-gray-100 dark:bg-gray-900  transition-colors duration-300">
 //       <div className="container mx-auto py-10">
 //         {/* Title and Description */}
 //         <div className="text-center mb-8">
@@ -86,7 +86,7 @@
 
 //         {/* Table */}
 //         <div className="overflow-x-auto">
-//           <table className="table-auto w-full bg-white dark:bg-gray-800 shadow-md rounded-lg transition-colors duration-300">
+//           <table className="table-auto w-full  bg-white dark:bg-gray-800 shadow-md rounded-lg transition-colors duration-300">
 //             <thead>
 //               <tr className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white uppercase text-sm">
 //                 <th className="py-3 px-4">ID</th>

@@ -63,7 +63,7 @@ export default function Login() {
         backgroundPosition: "center",
       }}
     >
-      <div className="flex items-center justify-center py-20 container mx-auto">
+      <div className="flex items-center justify-center py-20 container mx-auto min-h-[calc(100vh-300px)]">
         <div className="flex flex-col md:flex-row bg-white dark:bg-gray-900 shadow-lg rounded-lg">
           <section className="md:w-1/2 max-w-2xl">
             <img className="w-full" src={login} alt="" />
