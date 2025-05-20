@@ -8,7 +8,6 @@ import Login from "./Components/Login.jsx";
 import Register from "./Components/Register.jsx";
 import AllReview from "./Page/AllReviews.jsx";
 import AddReview from "./Page/AddReview.jsx";
-import MyReview from "./Page/MyReviews.jsx";
 import WistList from "./Page/Wishlist.jsx";
 import { RouterProvider } from "react-router";
 import ErrorPage from "./Page/ErrorPage.jsx";
@@ -17,6 +16,7 @@ import PrivateRoute from "./Components/PrivateRoute.jsx";
 import ReviewDetail from "./Components/ReviewDetail.jsx";
 import UpdateReview from "./Components/UpdateReview.jsx";
 import LatestNews from "./Components/LatestNews.jsx";
+import Review from "./Page/Review.jsx";
 
 const router = createBrowserRouter([
   {
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         path: "/MyReview",
         element: (
           <PrivateRoute>
-            <MyReview />,
+            <Review/>
           </PrivateRoute>
         ),
       },
